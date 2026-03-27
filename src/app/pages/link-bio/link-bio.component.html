@@ -7,15 +7,19 @@
       <img src="assets/header.png" class="header-img">
 
       <div class="overlay text-center">
-        <h5>POLLOS MISION</h5>
-        <small>Pollos a la canasta crocantes y alitas</small>
+        <h5 class="title">POLLOS MISION</h5>
+        <small class="subtitle">
+          Pollos a la canasta crocantes y alitas
+        </small>
 
         <div class="social mt-2">
-          <i class="bi bi-whatsapp"></i>
-          <i class="bi bi-facebook"></i>
-          <i class="bi bi-instagram"></i>
-          <i class="bi bi-tiktok"></i>
+          <a *ngFor="let link of socialLinks"
+            [href]="link.url"
+            target="_blank">
+            <i class="bi" [ngClass]="link.icon || ''"></i>
+          </a>
         </div>
+
       </div>
     </div>
 

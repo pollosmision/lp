@@ -10,11 +10,14 @@ import { Link } from 'src/app/models/link.model';
 export class LinkBioComponent implements OnInit {
 
   links: Link[] = [];
+  socialLinks: Link[] = [];
 
   constructor(private linkService: LinkService) {}
 
   ngOnInit(): void {
     this.links = this.linkService.getLinks();
+
+    this.socialLinks = this.links.filter(link => link.social);
   }
 
 }

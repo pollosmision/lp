@@ -30,3 +30,23 @@
 .btn-custom:hover {
   transform: scale(1.05);
 }
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+
+  /* movimiento */
+  10% { transform: rotate(-5deg); }
+  20% { transform: rotate(5deg); }
+  30% { transform: rotate(-4deg); }
+  40% { transform: rotate(4deg); }
+
+  /* vuelve a normal */
+  50% { transform: rotate(0deg); }
+
+  /* pausa */
+  100% { transform: rotate(0deg); }
+}
+
+.wobble {
+  animation: wobble 2.5s ease-in-out infinite;
+}
