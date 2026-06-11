@@ -1,5 +1,6 @@
 import React from 'react'
 import LinkBio from './components/LinkBio'
+import Stats from './components/Stats'
 import { useTheme } from './hooks/useTheme'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       </header>
       <main>
         <LinkBio />
+        <Stats />
       </main>
     </div>
   )
