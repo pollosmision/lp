@@ -1,45 +1,47 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# ================================
+#  ANGULAR
+# ================================
+angular/node_modules/
+angular/dist/
+angular/.angular/
+angular/.sass-cache/
+angular/connect.lock
+angular/coverage/
+angular/libpeerconnection.log
+angular/npm-debug.log
+angular/yarn-error.log
+angular/testem.log
+angular/typings/
+angular/.DS_Store
+angular/Thumbs.db
 
-# compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
+# ================================
+#  REACT
+# ================================
+react/node_modules/
+react/dist/
+react/build/
+react/.next/         # si usas Next.js
+react/out/           # si usas Next.js export
+react/.env.local
+react/.env.development.local
+react/.env.test.local
+react/.env.production.local
+react/npm-debug.log*
+react/yarn-debug.log*
+react/yarn-error.log*
+react/.DS_Store
+react/Thumbs.db
 
-# dependencies
-/node_modules
-
-# profiling files
-chrome-profiler-events*.json
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# ================================
+#  EDITORES / OS (global)
+# ================================
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

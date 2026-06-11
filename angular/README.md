@@ -1,4 +1,4 @@
-# PollosMision
+# PollosMision (Angular)
 
 ## Deploy
 
