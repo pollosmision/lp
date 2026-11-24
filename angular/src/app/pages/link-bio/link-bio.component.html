@@ -4,7 +4,7 @@
 
     <!-- HEADER -->
     <div class="header">
-      <img src="assets/header.png" class="header-img">
+      <img src="assets/header.png" class="header-img" alt="Logo de Pollos Misión: pollito con casco de astronauta">
 
       <div class="overlay text-center">
         <h5 class="title">POLLOS MISION</h5>
@@ -15,7 +15,9 @@
         <div class="social mt-2">
           <a *ngFor="let link of socialLinks"
             [href]="link.url"
-            target="_blank">
+            [attr.aria-label]="link.label"
+            target="_blank"
+            rel="noopener">
             <i class="bi" [ngClass]="link.icon || ''"></i>
           </a>
         </div>
