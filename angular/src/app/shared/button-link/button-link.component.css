@@ -11,7 +11,7 @@
   justify-content: center; /* centra texto */
   align-items: center;
 
-  transition: 0.2s;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* TEXTO */
@@ -27,8 +27,17 @@
 }
 
 /* HOVER */
-.btn-custom:hover {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .btn-custom:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* PRESIONADO */
+.btn-custom:active,
+.wobble:active {
+  animation: none;
+  transform: scale(0.97);
 }
 
 @keyframes wobble {
@@ -49,4 +58,10 @@
 
 .wobble {
   animation: wobble 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wobble {
+    animation: none;
+  }
 }

@@ -68,16 +68,19 @@ p, span, a {
   z-index: 2;
 }
 
+/* Área táctil de 44px (antes 38px); el margen baja para conservar el espaciado */
 .social i {
-  margin: 0 8px;
+  margin: 0 5px;
   font-size: 26px;
-  padding: 6px;
+  padding: 9px;
   border-radius: 50%;
-  transition: 0.2s;
+  transition: background-color 160ms ease;
 }
 
-.social i:hover {
-  background: rgba(255,255,255,0.2);
+@media (hover: hover) and (pointer: fine) {
+  .social i:hover {
+    background: rgba(255,255,255,0.2);
+  }
 }
 
 /* LINKS */
