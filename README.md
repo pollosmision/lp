@@ -22,8 +22,9 @@ Cada enlace tiene `label`, `url`, `icon` (clase de bootstrap-icons, p. ej. `bi-w
 
 ```bash
 cd angular
+nvm install 16 && nvm use 16   # Angular 12 requiere Node 16
 npm install
-npm start      # servidor de desarrollo (ng serve)
+npm start      # servidor de desarrollo (ng serve) en http://localhost:4200
 npm test       # pruebas con Karma/Jasmine (requiere Chrome)
 npm run build
 ```
@@ -57,6 +58,24 @@ npm run dev         # servidor de desarrollo (Vite)
 npm run build
 npm run typecheck   # tsc --noEmit
 ```
+
+## SEO
+
+El SEO está en `angular/src/index.html` (la versión publicada):
+
+- `title`, `description`, `canonical` y `lang="es"`.
+- Open Graph y Twitter Card, con imagen en `angular/src/assets/seo/og-image.jpg`.
+- Datos estructurados JSON-LD (`Restaurant`). Falta agregar dirección y horario reales.
+- Iconos (favicon, `apple-touch-icon`, manifest) en `angular/src/assets/seo/`.
+- `robots.txt` y `sitemap.xml` en `angular/src/`.
+
+Pasos manuales: registrar `https://pollosmision.github.io/lp/` en Google Search Console, enviar el sitemap y crear un perfil en Google Business Profile.
+
+## Herramientas de diseño (Claude Code)
+
+- Skills de proyecto en `.claude/skills/`: `emil-design-eng`, `impeccable` y `playwright-cli`.
+- `design-taste-frontend` pesa ~40 MB y está en `.gitignore`: instálalo en local.
+- `.mcp.json` declara el servidor MCP de Figma. Autoriza con `/mcp` en Claude Code.
 
 ## Recursos
 
