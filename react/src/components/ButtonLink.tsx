@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link as LinkType } from '../types'
 
 export default function ButtonLink({ link }: { link: LinkType }) {
@@ -7,10 +6,10 @@ export default function ButtonLink({ link }: { link: LinkType }) {
       href={link.url}
       target="_blank"
       rel="noreferrer"
-      className={`flex items-center justify-center gap-3 px-4 py-3 rounded-lg transition transform ${link.highlight ? 'bg-pm-red text-pm-yellow' : 'bg-white/5 text-white'} hover:scale-[1.02]`}
+      className={`btn-custom${link.highlight ? ' wobble' : ''}`}
     >
-      <i className={`bi ${link.icon || ''}`} />
-      <span>{link.label}</span>
+      {link.icon && <i className={`bi icon-left ${link.icon}`} />}
+      <span className="btn-text">{link.label}</span>
     </a>
   )
 }
