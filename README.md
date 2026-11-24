@@ -30,14 +30,23 @@ npm run build
 
 ### Despliegue
 
-El resultado compilado se versiona en `angular/docs/` y se publica con GitHub Pages en <https://pollosmision.github.io/lp/>:
+El despliegue es automático con GitHub Actions (`.github/workflows/deploy.yml`) y se publica en <https://pollosmision.github.io/lp/>.
+
+- **Push a `main`:** compila Angular (Node 16, necesario para Angular 12) con `base-href` de producción y lo publica en GitHub Pages.
+- **Pull requests:** solo compila, sin publicar.
+- **Manual:** pestaña *Actions* → *Build & Deploy* → *Run workflow*.
+- **React:** el workflow también ejecuta `typecheck` y `build` de `react/`, pero no bloquea el despliegue (`continue-on-error`) mientras la réplica esté en desarrollo.
+
+Requisito único: en *Settings → Pages → Source* debe estar seleccionado **GitHub Actions**.
+
+Build manual (opcional):
 
 ```bash
 cd angular
-ng build --prod=true --outputPath=docs --baseHref='https://pollosmision.github.io/lp/'
+ng build --configuration production --output-path=dist-pages --base-href='https://pollosmision.github.io/lp/'
 ```
 
-Luego haz commit y push de `angular/docs/`.
+> `angular/docs/` es el resultado del despliegue manual anterior. Ya no se usa una vez que Pages apunta a GitHub Actions.
 
 ## React
 
